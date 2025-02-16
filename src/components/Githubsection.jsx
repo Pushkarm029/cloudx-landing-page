@@ -4,7 +4,7 @@ import React from "react";
 
 const SyncWithGithub = () => {
   return (
-    <section className="relative z-20 overflow-hidden  px-36 bg-[#111111] pb-[180px] pt-[131px] px-safe lg:pb-[131px] lg:pt-24 md:py-24 sm:py-16">
+    <section className="relative z-20 overflow-hidden  px-36 bg-black pb-[180px] pt-[131px] px-safe lg:pb-[131px] lg:pt-24 md:py-24 sm:py-16">
       <div className="container-narrow px-32">
         <h2 className="max-w-2xl text-80 font-medium leading-[0.9] tracking-snugger text-white text-7xl tracking-tight">
           Sync with GitHub. Both&nbsp;ways.
