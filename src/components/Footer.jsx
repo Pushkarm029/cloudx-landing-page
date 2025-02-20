@@ -144,7 +144,7 @@ const NavLink = ({ link, label }) => {
     <li>
       <a
         href={link}
-        className="inline-block text-base leading-loose text-gray-400 hover:text-white dark:text-gray-600 dark:hover:text-white transition-colors duration-300"
+        className="inline-block text-base leading-loose text-gray-400 hover:text-white transition-colors duration-300"
       >
         {label}
       </a>
