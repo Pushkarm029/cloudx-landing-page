@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint && eslint . --ext .js,.jsx --fix",
-    "prepare": "husky install"
+    "lint": "next lint && eslint . --ext .js,.jsx --fix"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
