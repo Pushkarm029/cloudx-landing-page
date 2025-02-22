@@ -1,8 +1,9 @@
 import Hero from "@/components/Hero";
 import Featuresection from "@/components/Featuresection";
 import Githubsection from "@/components/Githubsection"
-import MetaBrain from "@/components/Metabrain";
+
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -11,7 +12,7 @@ export default function Home() {
       <Hero />
       <Featuresection className="pt-20"/>
       <Githubsection/>
-      <MetaBrain/>
+      <Footer/>
       
     </div>
   );

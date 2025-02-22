@@ -1,11 +1,11 @@
 const FeatureSection = () => {
     return (
-      <section className="relative bg-[#f4f4f4] z-10 pt-40  lg:pt-32 md:pt-24 sm:pt-16">
+      <section className="relative bg-black z-5 pt-30 lg:pt-20 md:pt-12 sm:pt-8">
         <div className="container-main mb-36 relative z-10 mx-auto max-w-screen-xl px-36">
-          <h2 className="font-title text-7xl font-semibold leading-h2 tracking-tighter text-black">
+          <h2 className="font-title text-7xl font-semibold leading-h2 tracking-tighter text-white">
             Unmatched productivity
           </h2>
-          <p className="mt-6 max-w-[705px] text-18 leading-tight tracking-tight lg:mt-5 sm:mt-3 sm:max-w-lg sm:text-15">
+          <p className="mt-3 max-w-[705px] text-white text-18 leading-tight tracking-tight lg:mt-5 sm:mt-3 sm:max-w-lg sm:text-15">
             Huly is a process, project, time, and knowledge management platform
             that provides amazing collaboration opportunities for developers and
             product teams alike.
