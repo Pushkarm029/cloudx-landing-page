@@ -1,124 +1,87 @@
 'use client';
 
 import * as NavigationMenu from '@radix-ui/react-navigation-menu';
-import { CaretDownIcon } from '@radix-ui/react-icons';
 import Image from 'next/image';
+import { useState } from 'react';
+import { Menu, X } from 'lucide-react';
+import "@fontsource/inter"; 
 
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <nav
-  className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-full sm:w-[90%] md:w-[75%] lg:w-[68%] 
-  backdrop-blur-lg rounded-xl shadow-lg py-0.5 transition-colors duration-300 ease-in-out"
-  style={{ backgroundColor: "rgba(255, 255, 255, 0.025)" }} // 2.5% opacity
+  className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 
+  w-full sm:w-[90%] md:w-[75%] lg:w-[66rem] max-w-[66rem] 
+  backdrop-blur-lg rounded-xl shadow-lg px-4 py-2 
+  transition-all duration-200 flex items-center justify-between
+  shadow-[0_0_10px_rgba(144,238,144,0.4)]"
+  style={{ backgroundColor: "rgba(255, 255, 255, 0.05)", fontFamily: "'Inter', sans-serif" }} 
 >
 
-      <div className="relative flex w-full items-center justify-between px-4">
-        {/* Logo */}
+      {/* Left: Logo */}
+      <div className="flex items-center">
         <Image src="/logo.png" alt="Logo" width={150} height={50} className="h-10 w-auto" />
+      </div>
 
-        {/* Desktop Navigation */}
-        <div className="relative hidden sm:flex w-auto">
-          <NavigationMenu.Root className="relative">
-            <NavigationMenu.List className="flex space-x-8 text-white/60">
-              {/* Documentation Dropdown */}
-              <NavigationMenu.Item className="relative">
-                <NavigationMenu.Trigger className="flex ml-8 items-center gap-1 hover:text-white">
-                  Documentation 
-                </NavigationMenu.Trigger>
-
-                {/* Dropdown Content
-                <NavigationMenu.Content className="absolute left-[-82px] sm:left-[-64px] md:left-[-80px] lg:left-[-147px] 
-                  top-[calc(100%+4px)] w-[calc(100vw-10%)] sm:w-[75vw] lg:w-[67vw] bg-white rounded-b-xl mt-4 shadow-lg p-6 
-                  z-50 transition-all duration-300 ease-out"
-                >
-                  <div className="grid grid-cols-3 gap-4">
-                    <div className="bg-gray-100 p-4 rounded-lg hover:bg-gray-200 transition">
-                      <h3 className="font-semibold text-white/60">Guides</h3>
-                      <p className="text-sm text-white/60">
-                        Start building modern documentation in under five minutes.
-                      </p>
-                    </div>
-                    <div className="bg-gray-100 p-4 rounded-lg hover:bg-gray-200 transition">
-                      <h3 className="font-semibold text-white/60">Components</h3>
-                      <p className="text-sm text-white/60">
-                        Explore the variety of components available.
-                      </p>
-                    </div>
-                    <div className="bg-gray-100 p-4 rounded-lg hover:bg-gray-200 transition">
-                      <h3 className="font-semibold text-white/60">API Playground</h3>
-                      <p className="text-sm text-white/60">
-                        Enable users to interact with your API.
-                      </p>
-                    </div>
-                  </div>
-                </NavigationMenu.Content> */}
-              </NavigationMenu.Item>
-
-              {/* Resources Dropdown */}
-              <NavigationMenu.Item className="relative">
-                <NavigationMenu.Trigger className="flex items-center gap-1 hover:text-white">
-                  Resources 
-                </NavigationMenu.Trigger>
-
-                {/* Dropdown Content
-                <NavigationMenu.Content className="absolute left-[-82px] sm:left-[-64px] md:left-[-80px] lg:left-[-337px] 
-                  top-[calc(100%+4px)] w-[calc(100vw-10%)] sm:w-[75vw] lg:w-[67vw] bg-white rounded-b-xl mt-4 shadow-lg p-6 
-                  z-50 transition-all duration-300 ease-out"
-                >
-                  <div className="grid grid-cols-3 gap-4">
-                    <div className="bg-gray-100 p-4 rounded-lg hover:bg-gray-200 transition">
-                      <h3 className="font-semibold text-white/60">Guides</h3>
-                      <p className="text-sm text-white/60">
-                        Start building modern documentation in under five minutes.
-                      </p>
-                    </div>
-                    <div className="bg-gray-100 p-4 rounded-lg hover:bg-gray-200 transition">
-                      <h3 className="font-semibold text-white/60">Components</h3>
-                      <p className="text-sm text-white/60">
-                        Explore the variety of components available.
-                      </p>
-                    </div>
-                    <div className="bg-gray-100 p-4 rounded-lg hover:bg-gray-200 transition">
-                      <h3 className="font-semibold text-white/60">API Playground</h3>
-                      <p className="text-sm text-white/60">
-                        Enable users to interact with your API.
-                      </p>
-                    </div>
-                  </div>
-                </NavigationMenu.Content> */}
-              </NavigationMenu.Item>
-
-              {/* Other Navigation Links */}
-              <NavigationMenu.Item>
-                <NavigationMenu.Link href="#" className="hover:text-white text-white/60">
-                  Request Preview
+      {/* Middle: Desktop Navigation */}
+      <div className="hidden lg:flex w-auto items-center justify-center">
+        <NavigationMenu.Root>
+          <NavigationMenu.List className="flex space-x-7 text-sm text-white/80">
+            {["Documentation", "Resources", "Request Preview", "Careers", "Pricing"].map((item, index) => (
+              <NavigationMenu.Item key={index}>
+                <NavigationMenu.Link href="#" className="hover:text-white hover:brightness-200 transition-colors">
+                  {item}
                 </NavigationMenu.Link>
               </NavigationMenu.Item>
-              <NavigationMenu.Item>
-                <NavigationMenu.Link href="#" className="hover:text-white text-white/60">
-                  Careers
-                </NavigationMenu.Link>
-              </NavigationMenu.Item>
-              <NavigationMenu.Item>
-                <NavigationMenu.Link href="#" className="hover:text-white text-white/60">
-                  Pricing
-                </NavigationMenu.Link>
-              </NavigationMenu.Item>
-            </NavigationMenu.List>
-          </NavigationMenu.Root>
-        </div>
+            ))}
+          </NavigationMenu.List>
+        </NavigationMenu.Root>
+      </div>
 
-        {/* Right-side buttons */}
-        <div className="hidden sm:flex gap-3">
-        <button className="border text-sm text-bold border-white/30 hover:border-white/10 text-white text-sm rounded-lg px-2 py-1 bg-transparent hover:bg-white/10 transition-all duration-300 ease-in-out">
-         Get a demo
+      {/* Right: Buttons */}
+      <div className="hidden lg:flex gap-3">
+        <button className="border font-bold border-white/30 hover:border-white/10 text-white text-sm rounded-lg px-3 py-1.5 bg-transparent hover:bg-white/10 transition">
+          Get a demo
+        </button>
+        <button className="border text-sm border-white bg-white text-black rounded-lg px-3 py-1.5 hover:bg-white/90 transition">
+          Sign up
+        </button>
+      </div>
+
+      {/* Mobile: Hamburger Menu Button */}
+      <button className="lg:hidden text-white" onClick={() => setMenuOpen(!menuOpen)}>
+        {menuOpen ? <X size={24} /> : <Menu size={24} />}
+      </button>
+
+      {/* Mobile: Collapsible Navigation */}
+      {menuOpen && (
+        <div className="absolute top-[4rem] left-0 w-full bg-black/80 backdrop-blur-lg rounded-lg shadow-lg py-4 px-6 lg:hidden">
+          <ul className="flex flex-col space-y-4 text-white text-center">
+            {["Documentation", "Resources", "Request Preview", "Careers", "Pricing"].map((item, index) => (
+              <li key={index}>
+                <a href="#" className="block py-2 hover:text-blue-400 transition">
+                  {item}
+                </a>
+              </li>
+            ))}
+            <li>
+              <button className="w-full border font-bold border-white/10  hover:border-white/10 text-white text-sm rounded-lg px-3 py-1.5  hover:bg-white/10 transition">
+                Get a demo
+              </button>
+            </li>
+            <li>
+            <button 
+             className="border text-sm border-white  text-black rounded-lg px-3 py-1.5 
+             hover:bg-white hover:text-black transition-all duration-200"
+              >
+             Sign up
             </button>
 
-          <button className="border text-sm border-white bg-white text-black rounded-lg px-2 py-1 hover:bg-white/90 transition">
-            Sign up
-          </button>
+            </li>
+          </ul>
         </div>
-      </div>
+      )}
     </nav>
   );
 };
