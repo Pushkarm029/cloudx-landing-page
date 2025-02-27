@@ -6,8 +6,8 @@ import GradientButton from "./ui/GradientButton";
 export default function HeroSectionWithNavbar() {
   return (
     <div
-      className="relative min-h-screen w-full px-36 flex flex-col text-white mx-auto"
-      style={{ backgroundImage: "url('/background.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}
+      className="relative bg-black min-h-screen w-full px-36 flex flex-col text-white mx-auto"
+      
     >
       {/* Hero Section */}
       <div className="relative flex-1 w-full flex flex-col items-start justify-center px-36 py-60">

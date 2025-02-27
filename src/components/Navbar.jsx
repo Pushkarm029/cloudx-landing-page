@@ -11,14 +11,13 @@ const Navbar = () => {
 
   return (
     <nav
-  className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 
-  w-full sm:w-[90%] md:w-[75%] lg:w-[66rem] max-w-[66rem] 
-  backdrop-blur-lg rounded-xl shadow-lg px-4 py-2 
-  transition-all duration-200 flex items-center justify-between
-  shadow-[0_0_10px_rgba(144,238,144,0.4)]"
-  style={{ backgroundColor: "rgba(255, 255, 255, 0.05)", fontFamily: "'Inter', sans-serif" }} 
->
-
+      className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 
+      w-full sm:w-[90%] md:w-[75%] lg:w-[66rem] max-w-[66rem] 
+      backdrop-blur-lg rounded-xl shadow-lg px-4 py-2 
+      transition-all duration-200 flex items-center justify-between
+      shadow-[0_4px_20px_rgba(144,238,144,0.7)] "
+      style={{ backgroundColor: "rgba(255, 255, 255, 0.08)", fontFamily: "'Inter', sans-serif" }} 
+    >
       {/* Left: Logo */}
       <div className="flex items-center">
         <Image src="/logo.png" alt="Logo" width={150} height={50} className="h-10 w-auto" />
@@ -66,18 +65,17 @@ const Navbar = () => {
               </li>
             ))}
             <li>
-              <button className="w-full border font-bold border-white/10  hover:border-white/10 text-white text-sm rounded-lg px-3 py-1.5  hover:bg-white/10 transition">
+              <button className="w-full border font-bold border-white/10 hover:border-white/10 text-white text-sm rounded-lg px-3 py-1.5 hover:bg-white/10 transition">
                 Get a demo
               </button>
             </li>
             <li>
-            <button 
-             className="border text-sm border-white  text-black rounded-lg px-3 py-1.5 
-             hover:bg-white hover:text-black transition-all duration-200"
+              <button 
+                className="border text-sm border-white text-black rounded-lg px-3 py-1.5 
+                hover:bg-white hover:text-black transition-all duration-200"
               >
-             Sign up
-            </button>
-
+                Sign up
+              </button>
             </li>
           </ul>
         </div>
