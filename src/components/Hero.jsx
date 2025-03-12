@@ -1,14 +1,11 @@
 "use client";
 
-import { FaGithub } from "react-icons/fa";
 import GradientButton from "./ui/GradientButton";
+import Image from "next/image";
 
 export default function HeroSectionWithNavbar() {
   return (
-    <div
-      className="relative bg-black min-h-screen w-full px-36 flex flex-col text-white mx-auto"
-      
-    >
+    <div className="relative bg-black min-h-screen w-full px-36 flex flex-col text-white mx-auto">
       {/* Hero Section */}
       <div className="relative flex-1 w-full flex flex-col items-start justify-center px-36 py-60">
         <h1 className="text-7xl font-bold leading-tight">
@@ -40,13 +37,12 @@ export default function HeroSectionWithNavbar() {
 
         <div className="mt-14 w-full py-36 flex justify-start">
           <div className="relative rounded-md overflow-hidden w-full sm:w-[80%]">
-            <img
+            <Image
               alt="Huly App"
-              fetchPriority="high"
-              width="1024"
-              height="569"
-              decoding="async"
               src="/huly2.jpg"
+              width={1024}
+              height={569}
+              priority
               className="w-full rounded-md"
             />
           </div>

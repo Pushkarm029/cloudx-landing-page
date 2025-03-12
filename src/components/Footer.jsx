@@ -1,14 +1,17 @@
 import { FaTwitter, FaLinkedin, FaGithub, FaDiscord } from "react-icons/fa";
+import Image from "next/image";
 import "@fontsource/inter"; 
 
 const Footer = () => {
   return (
-    <footer className="bg-black -mt-20 py-40 px-60 flex justify-between items-start w-full }"
-    style={{ fontFamily: "'Inter', sans-serif" }}>
+    <footer
+      className="bg-black -mt-20 py-40 px-60 flex justify-between items-start w-full"
+      style={{ fontFamily: "'Inter', sans-serif" }}
+    >
       {/* Left Section */}
       <div className="flex flex-col space-y-3">
         <div className="flex items-center space-x-2">
-        <img src="/logo.png" alt="CloudX Logo" className="h-6 w-6" />
+          <Image src="/logo.png" alt="CloudX Logo" width={24} height={24} />
           <h2 className="text-lg text-white font-bold">CloudX</h2>
         </div>
         <div className="flex space-x-3 text-white text-xl">
@@ -22,7 +25,7 @@ const Footer = () => {
           <span>All systems operational</span>
         </div>
       </div>
-      
+
       {/* Middle Section */}
       <div className="text-white/60 flex flex-col">
         <h3 className="text-white font-medium mb-2">Company</h3>
@@ -32,16 +35,15 @@ const Footer = () => {
           <li className="hover:text-white cursor-pointer hover:underline py-1.5">Terms of Service</li>
         </ul>
       </div>
-      
-      {/* Right Section */}
-      <div className="text-white/60  flex flex-col">
-  <h3 className="text-white font-medium mb-2">Developers</h3>
-  <ul className="flex flex-col">
-    <li className="hover:text-white cursor-pointer hover:underline py-1.5">API Documentation</li>
-    <li className="hover:text-white cursor-pointer hover:underline py-1.5">API Reference</li>
-  </ul>
-</div>
 
+      {/* Right Section */}
+      <div className="text-white/60 flex flex-col">
+        <h3 className="text-white font-medium mb-2">Developers</h3>
+        <ul className="flex flex-col">
+          <li className="hover:text-white cursor-pointer hover:underline py-1.5">API Documentation</li>
+          <li className="hover:text-white cursor-pointer hover:underline py-1.5">API Reference</li>
+        </ul>
+      </div>
     </footer>
   );
 };
