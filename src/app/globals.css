@@ -99,3 +99,29 @@ body {
 .dropdown-item:hover {
   background: rgba(255, 255, 255, 0.1); /* Subtle hover effect */
 }
+.pricing-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.pricing-card::before {
+  content: "";
+  position: absolute;
+  top: var(--blurY, 50%);
+  left: var(--blurX, 50%);
+  width: 600px;
+  height: 600px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  filter: blur(50px);
+  transform: translate(-50%, -50%);
+  transition: opacity 0.5s ease-out, transform 0.4s ease-out, filter 0.6s ease-out;
+  pointer-events: none;
+  opacity: 0.6; /* Keep the glow always visible */
+}
+
+.pricing-card:hover::before {
+  opacity: 0.8; /* Slightly increase on hover */
+  transform: translate(-50%, -50%) scale(1.1);
+  filter: blur(60px);
+}
