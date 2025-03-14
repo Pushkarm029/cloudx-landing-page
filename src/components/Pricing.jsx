@@ -18,46 +18,62 @@ export default function PricingTable() {
   }, []);
 
   return (
-    
-    <div className="flex flex-col md:flex-row justify-center gap-6 p-6 bg-black text-white">
-  {/* Free Tier */}
-  <div className="md:ml-18 flex-1">
-    <PricingCard title="Free" price="$0" description="Free for all users" features={[
-      "3 Projects", "Record & Export", "1080p, High quality, 30 FPS", "Up to 5 mins recordings", "10 MB video/audio clips", "500 MB storage"
-    ]} buttonText="Join Waitlist" />
-  </div>
+    <div className="w-full flex flex-col md:flex-row justify-center gap-6 py-12 bg-black text-white">
+      {/* Free Tier */}
+      <PricingCard
+        title="Free"
+        price="$0"
+        description="Free for all users"
+        features={[
+          "3 Projects", "Record & Export", "1080p, High quality, 30 FPS",
+          "Up to 5 mins recordings", "10 MB video/audio clips", "500 MB storage"
+        ]}
+        buttonText="Join Waitlist"
+        buttonClass="bg-gradient-to-b from-white/10 to-black "
+      />
 
-  {/* Pro Tier */}
-  <div className="flex-1">
-    <PricingCard title="Pro" price="$14" description="billed yearly" discount="$20" features={[
-      "Unlimited Projects", "Record & Export", "4K, Perfect quality, 60 FPS", "Unlimited recordings",
-      "500 MB video/audio clips", "50 GB storage", "AI Voices (120 mins per month)",
-      "Image/Video Generation, Chat, Notes (1,000,000 tokens per month)",
-      "Remove background noise", "Transcribe Audio/Video", "Premium backgrounds and videos"
-    ]} buttonText="Become an Early Supporter" />
-  </div>
+      {/* Pro Tier (Blue Button) */}
+      <PricingCard
+        title="Pro"
+        price="$14"
+        description="billed yearly"
+        discount="$20"
+        features={[
+          "Unlimited Projects", "Record & Export", "4K, Perfect quality, 60 FPS",
+          "Unlimited recordings", "500 MB video/audio clips", "50 GB storage",
+          "AI Voices (120 mins per month)", "Image/Video Generation, Chat, Notes ",
+          "Remove background noise", "Transcribe Audio/Video", "Premium backgrounds and videos"
+        ]}
+        buttonText="Become an Early Supporter"
+        buttonClass="bg-blue-600 hover:bg-blue-700"
+      />
 
-  {/* Pro+ Tier */}
-  <div className="md:mr-18 flex-1">
-    <PricingCard title="Pro+" price="$28" description="billed yearly" discount="$40" features={[
-      "Unlimited Projects", "Record & Export", "4K, Perfect quality, 60 FPS", "Unlimited recordings",
-      "1 GB video/audio clips", "100 GB storage", "AI Voices (240 mins per month)",
-      "Image/Video Generation, Chat, Notes (2,000,000 tokens per month)",
-      "Remove background noise", "Transcribe Audio/Video", "Premium backgrounds and videos"
-    ]} buttonText="Become an Early Supporter" />
-  </div>
-</div>
-
-    
+      {/* Pro+ Tier */}
+      <PricingCard
+        title="Pro+"
+        price="$28"
+        description="billed yearly"
+        discount="$40"
+        features={[
+          "Unlimited Projects", "Record & Export", "4K, Perfect quality, 60 FPS",
+          "Unlimited recordings", "1 GB video/audio clips", "100 GB storage",
+          "AI Voices (240 mins per month)", "Image/Video Generation, Chat, Notes ",
+          "Remove background noise", "Transcribe Audio/Video", "Premium backgrounds and videos"
+        ]}
+        buttonText="Become an Early Supporter"
+        buttonClass="bg-gradient-to-b from-white/10 to-black "
+      />
+    </div>
   );
 }
 
-function PricingCard({ title, price, description, discount, features, buttonText }) {
+function PricingCard({ title, price, description, discount, features, buttonText, buttonClass }) {
   return (
-    <div className="pricing-card flex-1 p-6 rounded-lg bg-zinc-900 bg-opacity-70 backdrop-blur-lg flex flex-col relative overflow-hidden">
+    <div className="pricing-card flex flex-col h-full p-6 rounded-lg bg-zinc-900 bg-opacity-70 backdrop-blur-lg relative overflow-hidden mx-3">
       <div className="glow-effect"></div>
 
       <h2 className="text-xl font-bold mb-4">{title}</h2>
+      <hr className="border-gray-600 border-1 w-full mb-4" />
 
       <div className="mb-6">
         <p className="text-3xl font-bold flex items-center">
@@ -69,22 +85,24 @@ function PricingCard({ title, price, description, discount, features, buttonText
 
       <div className="space-y-4 flex-grow">
         {features.map((feature, index) => (
-          <Feature key={index} text={feature} />
+          <Feature key={index} text={feature} index={index} />
         ))}
       </div>
 
-      <button className="mt-8 w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2 rounded-lg">
+      <button className={`mt-auto w-full py-2 rounded-xl ${buttonClass} text-white`}>
         {buttonText}
       </button>
     </div>
   );
 }
 
-function Feature({ text }) {
+function Feature({ text, index }) {
   return (
     <div className="flex items-start">
-      <Check className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-      <span className="text-sm">{text}</span>
+      <div className="h-4 w-4 flex items-center justify-center bg-gray-300 rounded-full mr-2">
+        <Check className="h-3 w-3 text-black" />
+      </div>
+      <span className={`text-sm ${index < 3 ? "text-white font-bold" : "text-gray-400"}`}>{text}</span>
     </div>
   );
 }

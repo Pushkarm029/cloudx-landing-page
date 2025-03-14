@@ -102,6 +102,13 @@ body {
 .pricing-card {
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 350px; /* Set a fixed width */
+  height: 700px; /* Set a fixed height */
+  min-height: 500px; /* Ensure all cards have the same height */
+  padding: 20px;
 }
 
 .pricing-card::before {
@@ -109,9 +116,9 @@ body {
   position: absolute;
   top: var(--blurY, 50%);
   left: var(--blurX, 50%);
-  width: 600px;
-  height: 600px;
-  background: rgba(255, 255, 255, 0.05);
+  width: 400px;
+  height: 400px;
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
   filter: blur(50px);
   transform: translate(-50%, -50%);
