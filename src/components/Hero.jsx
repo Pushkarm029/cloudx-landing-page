@@ -7,14 +7,13 @@ export default function HeroSectionWithNavbar() {
   return (
     <div className="relative bg-black min-h-screen w-full px-36 flex flex-col text-white mx-auto">
       {/* Hero Section */}
-      <div className="relative flex-1 w-full flex flex-col items-start justify-center px-36 py-60">
-        <h1 className="text-7xl font-bold leading-tight">
-          Everything App <br />
-          <span className="text-blue-100">for your teams</span>
+      <div className="relative flex-1 w-full flex flex-col items-start justify-center px-36 pt-60">
+        <h1 className="text-4xl font-bold leading-tight">
+        Experience State-of-the-Art Innovation in Online <br />
+          <span className="text-blue-100">Gaming</span>
         </h1>
         <p className="text-white mt-4 text-lg max-w-xl">
-          Huly, an open-source platform, serves as an all-in-one <br /> replacement for
-          Linear, Jira, Slack, and Notion.
+        CloudX delivers the ultimate online gaming experience with cutting edge technology—offering near-zero latency, zero downtime, and instant access with no wait time.
         </p>
         <div className="mt-11 lg:mt-9 md:mt-7 sm:mt-5">
           <GradientButton>

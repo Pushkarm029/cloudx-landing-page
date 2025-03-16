@@ -15,7 +15,7 @@ const Navbar = () => {
       w-full sm:w-[90%] md:w-[75%] lg:w-[66rem] max-w-[66rem] 
       backdrop-blur-lg rounded-xl shadow-lg px-4 py-2 
       transition-all duration-200 flex items-center justify-between
-      shadow-[0_4px_20px_rgba(144,238,144,0.7)] "
+      shadow-[0_4px_20px_rgba(200,255,100,0.4)] " // Modified shadow color here
       style={{ backgroundColor: "rgba(255, 255, 255, 0.08)", fontFamily: "'Inter', sans-serif" }} 
     >
       {/* Left: Logo */}

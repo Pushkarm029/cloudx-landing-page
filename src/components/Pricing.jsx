@@ -21,8 +21,8 @@ export default function PricingTable() {
     <div className="w-full flex flex-col md:flex-row justify-center gap-6 py-12 bg-black text-white">
       {/* Free Tier */}
       <PricingCard
-        title="Free"
-        price="$0"
+        title="On The Go"
+        price="$2"
         description="Free for all users"
         features={[
           "3 Projects", "Record & Export", "1080p, High quality, 30 FPS",
@@ -34,10 +34,10 @@ export default function PricingTable() {
 
       {/* Pro Tier (Blue Button) */}
       <PricingCard
-        title="Pro"
-        price="$14"
+        title="Gold"
+        price="$40"
         description="billed yearly"
-        discount="$20"
+        discount="$65"
         features={[
           "Unlimited Projects", "Record & Export", "4K, Perfect quality, 60 FPS",
           "Unlimited recordings", "500 MB video/audio clips", "50 GB storage",
@@ -50,10 +50,10 @@ export default function PricingTable() {
 
       {/* Pro+ Tier */}
       <PricingCard
-        title="Pro+"
-        price="$28"
+        title="Platinum"
+        price="$100"
         description="billed yearly"
-        discount="$40"
+        discount="$140"
         features={[
           "Unlimited Projects", "Record & Export", "4K, Perfect quality, 60 FPS",
           "Unlimited recordings", "1 GB video/audio clips", "100 GB storage",
