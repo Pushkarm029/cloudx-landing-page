@@ -4,6 +4,7 @@ import Githubsection from "@/components/Githubsection";
 import Pricing from "@/components/Pricing";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Faq from "@/components/Faq";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <Featuresection className="pt-20"/>
       <Githubsection/>
       <Pricing/>
+      <Faq/>
       <Footer/>
       
     </div>
