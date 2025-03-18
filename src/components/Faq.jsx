@@ -44,7 +44,7 @@ export default function FAQAccordion() {
     {
       question: "How Seline compares to Plausible, Fathom, or similar tools?",
       answer:
-        "Seline offers similar privacy-focused analytics to Pl-ausible and Fathom, but with our own unique approach to data visualization and insights. We focus on simplicity and actionable metrics for website owners.",
+        "Seline offers similar privacy-focused analytics to Plausible and Fathom, but with our own unique approach to data visualization and insights. We focus on simplicity and actionable metrics for website owners.",
     },
     {
       question: "Who is behind Seline?",
@@ -56,29 +56,53 @@ export default function FAQAccordion() {
   return (
     <div className="w-full bg-black text-white">
       <div className="mx-auto px-4 py-12 max-w-6xl mt-32 mb-32">
-        <h2 className="text-3xl font-bold mb-6" style={{ fontFamily: 'var(--font-heading), "roobert", "Roobert Fallback", sans-serif' }}>Questions & answers</h2>
+        <h2
+          className="text-3xl font-bold mb-6"
+          style={{
+            fontFamily:
+              'var(--font-heading), "roobert", "Roobert Fallback", sans-serif',
+          }}
+        >
+          Questions & answers
+        </h2>
         <div className="space-y-3">
           {faqItems.map((item, index) => (
-            <div key={index} className={`pb-2 ${index === 0 ? 'mt-8' : ''}`}>
+            <div key={index} className={`pb-2 ${index === 0 ? "mt-8" : ""}`}>
               <button
                 onClick={() => toggleFAQ(index)}
-                className="flex items-center w-full text-left py-1 focus:outline-none"
+                className="flex items-center w-full text-left py-2 focus:outline-none"
               >
                 <ChevronDown
                   className={cn(
-                    "h-4 w-4 text-blue-500 transition-transform duration-200 mr-2",
-                    openIndex === index ? "transform rotate-180" : ""
+                    "h-5 w-5 text-blue-500 transition-transform duration-300 ease-in-out mr-2",
+                    openIndex === index ? "rotate-180" : ""
                   )}
                 />
-                <span className="text-lg font-medium" style={{ fontFamily: 'var(--font-heading), "roobert", "Roobert Fallback", sans-serif' }}>{item.question}</span> {/* Changed text-base to text-lg */}
+                <span
+                  className="text-lg font-medium"
+                  style={{
+                    fontFamily:
+                      'var(--font-heading), "roobert", "Roobert Fallback", sans-serif',
+                  }}
+                >
+                  {item.question}
+                </span>
               </button>
               <div
                 className={cn(
-                  "mt-1 transition-all duration-200 overflow-hidden",
-                  openIndex === index ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                  "transition-all duration-700 ease-in-out overflow-hidden",
+                  openIndex === index ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
                 )}
               >
-                <p className="py-1 text-sm text-gray-400" style={{ fontFamily: 'var(--font-heading), "roobert", "Roobert Fallback", sans-serif' }}>{item.answer}</p>
+                <p
+                  className="py-2 text-sm text-gray-400 transition-opacity duration-700 ease-in-out"
+                  style={{
+                    fontFamily:
+                      'var(--font-heading), "roobert", "Roobert Fallback", sans-serif',
+                  }}
+                >
+                  {item.answer}
+                </p>
               </div>
             </div>
           ))}
