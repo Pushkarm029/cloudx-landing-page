@@ -3,7 +3,7 @@ import { Zap, Grid3X3, PieChart, Users, Settings, Lightbulb } from "lucide-react
 
 export default function AnalyticsLanding() {
   return (
-    <div className="bg-black py-40 text-white">
+    <div className=" py-40 bg-black text-white">
       <div className="max-w-6xl mx-auto  relative mb-16 text-center flex flex-col items-center ">
         <div className="absolute top-0 right-0 w-64 h-64 opacity-50">
           <Image

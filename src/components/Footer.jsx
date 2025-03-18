@@ -9,7 +9,7 @@ const Footer = () => {
       style={{ fontFamily: "'Inter', sans-serif" }}
     >
       {/* Left Section */}
-      <div className="flex flex-col space-y-3">
+      <div className="flex flex-col space-y-3 ml-32">
         <div className="flex items-center space-x-2">
           <Image src="/logo.png" alt="CloudX Logo" width={24} height={24} />
           <h2 className="text-lg text-white font-bold">CloudX</h2>
@@ -27,7 +27,7 @@ const Footer = () => {
       </div>
 
       {/* Middle Section */}
-      <div className="text-white/60 flex flex-col">
+      <div className="text-white/60 flex flex-col mr-32">
         <h3 className="text-white font-medium mb-2">Company</h3>
         <ul className="space-y-1">
           <li className="hover:text-white cursor-pointer hover:underline py-1.5">Support</li>
@@ -36,14 +36,7 @@ const Footer = () => {
         </ul>
       </div>
 
-      {/* Right Section */}
-      <div className="text-white/60 flex flex-col">
-        <h3 className="text-white font-medium mb-2">Developers</h3>
-        <ul className="flex flex-col">
-          <li className="hover:text-white cursor-pointer hover:underline py-1.5">API Documentation</li>
-          <li className="hover:text-white cursor-pointer hover:underline py-1.5">API Reference</li>
-        </ul>
-      </div>
+     
     </footer>
   );
 };
