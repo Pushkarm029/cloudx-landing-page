@@ -4,6 +4,7 @@ import Githubsection from "@/components/Githubsection";
 import Pricing from "@/components/Pricing";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import PreFooter from "@/components/PreFooter";
 import Faq from "@/components/Faq";
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <Githubsection/>
       <Pricing/>
       <Faq/>
+      <PreFooter/>
       <Footer/>
       
     </div>
