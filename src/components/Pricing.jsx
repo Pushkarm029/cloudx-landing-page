@@ -18,7 +18,7 @@ export default function PricingTable() {
   }, []);
 
   return (
-    <div className="w-full flex flex-col md:flex-row justify-center gap-6 py-12 bg-black text-white">
+    <div className="w-full flex flex-col items-center md:flex-row md:justify-center gap-6 py-12 bg-black text-white">
       {/* Free Tier */}
       <PricingCard
         title="On The Go"
