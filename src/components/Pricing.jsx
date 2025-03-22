@@ -68,7 +68,7 @@ export default function PricingTable() {
   );
 }
 
-function PricingCard({ title, price, description, discount, features, buttonText, buttonClass, selectedFrequency }) {
+function PricingCard({ title, price, description, features, buttonText, buttonClass, selectedFrequency }) {
   const isFirstCard = title === "On The Go";
 
   return (
