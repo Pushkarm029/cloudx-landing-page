@@ -1,7 +1,6 @@
 "use client";
 
 import GradientButton from "./ui/GradientButton";
-import Image from "next/image";
 
 export default function HeroSectionWithNavbar() {
   return (
@@ -17,22 +16,26 @@ export default function HeroSectionWithNavbar() {
         </p>
       </div>
 
-      {/* Image Section */}
-      <div className="mt-8 md:mt-12 w-full max-w-4xl px-4">
-        <div className="relative rounded-md overflow-hidden w-full">
-          <Image
-            alt="Huly App"
-            src="/huly2.jpg"
-            width={1024}
-            height={569}
-            priority
-            className="w-full h-auto rounded-md"
-          />
-        </div>
-      </div>
+      {/* Video Section */}
+      <div className="mt-8 md:mt-12 w-full max-w-4xl mb-8">
+  <div className="relative rounded-md overflow-hidden w-full aspect-[16/9]">
+    <video
+      src="/100mill.mp4"
+      autoPlay
+      loop
+      muted
+      playsInline
+      className="w-full h-full object-cover rounded-md"
+    />
+    {/* Stronger Gradient Overlay */}
+    <div className="absolute bottom-0 left-0 w-full h-64 bg-gradient-to-t from-black/95 to-transparent"></div>
+  </div>
+</div>
+
+
 
       {/* Buttons Section */}
-      <div className="mt-6 md:mt-8 flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 mb-16">
+      <div className="mt-6 md:mt-8 flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 mb-12">
         <GradientButton className="h-12 w-full md:w-auto">
           <span className="text-[#5A250A]">Get A Demo</span>
           <svg
