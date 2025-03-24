@@ -3,7 +3,7 @@ import Image from "next/image";
 const FeatureSection = () => {
   return (
     <section className="relative bg-black z-5 pt-30 lg:pt-20 md:pt-12 sm:pt-8">
-      <div className="container-main mb-36 relative z-10 mx-auto max-w-screen-xl px-36">
+      {/* <div className="container-main mb-36 relative z-10 mx-auto max-w-screen-xl px-36">
         <h2 className="font-title text-7xl font-semibold leading-h2 tracking-tighter text-white">
           Unmatched productivity
         </h2>
@@ -82,7 +82,7 @@ const FeatureSection = () => {
             </div>
           </li>
         </ul>
-      </div>
+      </div> */}
     </section>
   );
 };
