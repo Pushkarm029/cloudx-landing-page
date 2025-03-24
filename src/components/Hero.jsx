@@ -17,16 +17,17 @@ export default function HeroSectionWithNavbar() {
       </div>
 
       {/* Video Section */}
-      <div className="mt-8 md:mt-12 w-full max-w-4xl mb-8">
+      {/* Video Section */}
+<div className="mt-8 md:mt-12 w-full max-w-4xl mb-8">
   <div className="relative rounded-md overflow-hidden w-full aspect-[16/9]">
-    <video
-      src="/100mill.mp4"
-      autoPlay
-      loop
-      muted
-      playsInline
-      className="w-full h-full object-cover rounded-md"
-    />
+    {/* YouTube Embed */}
+    <iframe
+      src="https://www.youtube.com/embed/0dXiVYq8HBc?autoplay=1&loop=1&mute=1&playlist=0dXiVYq8HBc"
+      allow="autoplay; encrypted-media"
+      allowFullScreen
+      className="w-full h-full rounded-md"
+    ></iframe>
+    
     {/* Stronger Gradient Overlay */}
     <div className="absolute bottom-0 left-0 w-full h-64 bg-gradient-to-t from-black/95 to-transparent"></div>
   </div>
@@ -34,8 +35,9 @@ export default function HeroSectionWithNavbar() {
 
 
 
+
       {/* Buttons Section */}
-      <div className="mt-6 md:mt-8 flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 mb-12">
+      <div className="mt-6 md:mt-8 flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
         <GradientButton className="h-12 w-full md:w-auto">
           <span className="text-[#5A250A]">Get A Demo</span>
           <svg
