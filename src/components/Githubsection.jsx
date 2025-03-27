@@ -58,15 +58,16 @@ export default function AnalyticsLanding() {
             { Icon: Settings, title: "Seamless Multiplayer", description: "Smooth, real-time gameplay with friends worldwide." },
             { Icon: Lightbulb, title: "State-of-the-Art Security", description: "Advanced encryption and anti-cheat systems for fair play." }
           ].map(({ Icon, title, description }, index) => (
-            <div key={index} className="relative p-6 bg-transparent rounded-md text-left border-0">
-              {/* Icon */}
-              <div className="p-3 mb-4">
-                <Icon className="h-6 w-6 text-blue-400 stroke-1" />
-              </div>
+            <div 
+              key={index} 
+              className="relative p-6 bg-transparent rounded-md text-left transition-shadow duration-300 hover:shadow-[0_0_20px_rgba(0,132,255,0.5)]"
+            >
+              {/* Background Icon */}
+              <Icon className="absolute inset-0 w-full h-full text-blue-600 opacity-25 scale-1 stroke-01" />
 
               {/* Text Content */}
-              <h2 className="text-xl font-semibold mb-3">{title}</h2>
-              <p className="text-lg text-gray-400">{description}</p>
+              <h2 className="text-xl font-semibold mb-3 relative z-10">{title}</h2>
+              <p className="text-lg text-gray-400 relative z-10">{description}</p>
 
               {/* Corner Borders */}
               <div className="absolute top-0 left-0 w-5 h-5 border-t-4 border-l-4 border-white"></div>

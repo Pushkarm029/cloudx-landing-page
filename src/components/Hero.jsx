@@ -54,23 +54,24 @@ export default function HeroSectionWithNavbar() {
             />
           </svg>
         </GradientButton>
+        <button className="h-9 w-full md:w-[230px] border font-bold text-s border-blue-300 hover:border-blue-300 text-white text-sm rounded-2xl px-5 py-2 bg-transparent hover:bg-blue-300 hover:text-black transition flex items-center justify-center gap-3 group">
+  <span>Sign Up</span>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 17 9"
+    className="h-[9px] w-[17px] text-white transition-colors group-hover:text-black"
+  >
+    <path
+      fill="currentColor"
+      fillRule="evenodd"
+      d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z"
+      clipRule="evenodd"
+    />
+  </svg>
+</button>
 
-        <GradientButton className="h-12 w-full md:w-auto">
-          <span className="text-[#5A250A]">Sign Up</span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 17 9"
-            className="h-[9px] w-[17px] text-[#5A250A]"
-          >
-            <path
-              fill="currentColor"
-              fillRule="evenodd"
-              d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z"
-              clipRule="evenodd"
-            />
-          </svg>
-        </GradientButton>
+
       </div>
     </div>
   );
