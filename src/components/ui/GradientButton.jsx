@@ -2,7 +2,7 @@
 import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 
-const GradientButton = ({ children }) => {
+const GradientButton = ({ children, className = '' }) => {
   const buttonRef = useRef(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
@@ -15,23 +15,36 @@ const GradientButton = ({ children }) => {
     }
   };
 
+  const handleMouseLeave = () => {
+    setPosition({ x: 0, y: 0 });
+  };
+
   return (
     <motion.button
       ref={buttonRef}
-      className="relative z-10 overflow-hidden rounded-full border border-white/60 bg-[#d1d1d1] px-16 py-2 uppercase font-bold text-xs text-black transition-all duration-200 flex items-center justify-center space-x-1"
+      className={`relative z-10 overflow-hidden rounded-xl 
+                 bg-gradient-to-r from-blue-600 to-purple-600 
+                 hover:from-blue-500 hover:to-purple-500 
+                 text-white shadow-lg hover:shadow-xl 
+                 transition-all duration-300 
+                 ${className}`}
       onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
     >
       <motion.div
-        className="absolute -z-10 flex w-[204px] items-center justify-center"
+        className="absolute -z-10 flex items-center justify-center"
+        style={{ 
+            width: '200px', 
+            height: '150px', 
+            background: `radial-gradient(circle at center, rgba(147, 197, 253, 0.5) 0%, rgba(96, 165, 250, 0.3) 30%, transparent 70%)`
+        }}
         animate={{ x: position.x, y: position.y }}
-        transition={{ type: "spring", stiffness: 100, damping: 10 }}
-      >
-        {/* Outer glow */}
-        <div className="absolute top-1/2 left-1/2 h-[121px] w-[121px] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(circle,#FFFFF5_3.5%,#FFAA81_26.5%,#FFDA9F_37.5%,rgba(255,170,129,0.50)_49%,rgba(210,106,58,0.00)_92.5%)]" />
-        {/* Inner soft glow */}
-        <div className="absolute top-1/2 left-1/2 h-[103px] w-[204px] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(circle,#FFFFF7_29%,#FFFACD_48.5%,#F4D2BF_60.71%,rgba(214,211,210,0.00)_100%)] blur-[5px]" />
-      </motion.div>
-      {children}
+        transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
+      />
+        
+      <span className="relative z-10 flex items-center justify-center w-full h-full">
+        {children}
+      </span>
     </motion.button>
   );
 };

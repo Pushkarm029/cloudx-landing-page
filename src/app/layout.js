@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "MirageCloud2",
-  description: "A Next.js clone of Huly.io",
+  title: "Game9 - Join Our Gaming Journey",
+  description: "Game9 is an experimental gaming platform built on player feedback. Share your ideas and help shape the future of gaming.",
 };
 
 export default function RootLayout({ children }) {

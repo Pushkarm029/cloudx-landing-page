@@ -1,77 +1,103 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import GradientButton from "./ui/GradientButton";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function HeroSectionWithNavbar() {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  const benefits = [
+    {
+      icon: "⚡",
+      title: "Zero Downtime",
+      description: "Our platform is engineered for 99.99% uptime. Game without interruptions, always."
+    },
+    {
+      icon: "🚀",
+      title: "No Waiting Queue",
+      description: "Instant access when you want to play. No more waiting in line after paying."
+    },
+    {
+      icon: "🎮",
+      title: "Play Any Game",
+      description: "From AAA titles to indie gems, access our vast library without restrictions."
+    }
+  ];
+
   return (
-    <div className="relative bg-black bg-[url('/bg-gradient.png')] bg-no-repeat bg-center bg-cover min-h-screen w-full flex flex-col text-white items-center justify-center px-6 md:px-12">
+    <div className="relative bg-black bg-[url('/bg-gradient.png')] bg-no-repeat bg-center bg-cover min-h-screen w-full flex flex-col text-white items-center justify-center px-6 md:px-12 overflow-hidden">
       {/* Hero Section */}
-      <div className="flex flex-col items-center text-center w-full max-w-4xl mt-32 md:mt-56">
-        <h1 className="text-3xl md:text-5xl font-bold leading-tight">
-          Experience State-of-the-Art Innovation in
-          <span className="text-blue-200"> Online Gaming</span>
+      <div 
+        className="flex flex-col items-center text-center w-full max-w-4xl mt-24 md:mt-36"
+      >
+        <span 
+          className="text-blue-300 font-mono text-sm md:text-base tracking-widest mb-4"
+        >
+          NEXT GENERATION CLOUD GAMING PLATFORM
+        </span>
+        
+        <h1 
+          className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight mb-6"
+        >
+          Welcome to 
+          <span className="text-blue-200"> Game9</span>
         </h1>
-        <p className="text-white mt-4 text-base md:text-lg max-w-2xl">
-          CloudX delivers the ultimate online gaming experience with cutting-edge technology—offering near-zero latency, zero downtime, and instant access with no wait time.
+        
+        <p 
+          className="text-white/70 mt-4 text-base md:text-xl max-w-2xl leading-relaxed"
+        >
+          This isn't just another cloud gaming platform charging hefty fees while making you wait. 
+          Game9 is built by gamers who believe in instant access, zero compromises, and putting players first.
         </p>
-      </div>
 
-      {/* Video Section */}
-      {/* Video Section */}
-<div className="mt-8 md:mt-12 w-full max-w-4xl mb-8">
-  <div className="relative rounded-md overflow-hidden w-full aspect-[16/9]">
-    {/* YouTube Embed */}
-    <iframe
-      src="https://www.youtube.com/embed/0dXiVYq8HBc?autoplay=1&loop=1&mute=1&playlist=0dXiVYq8HBc"
-      allow="autoplay; encrypted-media"
-      allowFullScreen
-      className="w-full h-full rounded-md"
-    ></iframe>
-    
-    {/* Stronger Gradient Overlay */}
-    <div className="absolute bottom-0 left-0 w-full h-64 bg-gradient-to-t from-black/95 to-transparent"></div>
-  </div>
-</div>
+        {/* Benefits Section */}
+        <div 
+          id="what-we-offer"
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mt-12"
+        >
+          {benefits.map((benefit, index) => (
+            <motion.div 
+              key={index}
+              className="bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-white/10 transition-all duration-300 hover:border-blue-300/30 hover:-translate-y-1"
+              whileHover={{ scale: 1.03 }}
+            >
+              <div className="text-3xl mb-3">{benefit.icon}</div>
+              <h3 className="text-xl font-semibold text-blue-200 mb-2">{benefit.title}</h3>
+              <p className="text-white/70 text-sm">{benefit.description}</p>
+            </motion.div>
+          ))}
+        </div>
 
-
-
-
-      {/* Buttons Section */}
-      <div className="mt-6 md:mt-8 flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
-        <GradientButton className="h-12 w-full md:w-auto">
-          <span className="text-[#5A250A]">Get A Demo</span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 17 9"
-            className="h-[9px] w-[17px] text-[#5A250A]"
-          >
-            <path
-              fill="currentColor"
-              fillRule="evenodd"
-              d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z"
-              clipRule="evenodd"
-            />
-          </svg>
-        </GradientButton>
-        <button className="h-9 w-full md:w-[230px] border font-bold text-s border-blue-300 hover:border-blue-300 text-white text-sm rounded-2xl px-5 py-2 bg-transparent hover:bg-blue-300 hover:text-black transition flex items-center justify-center gap-3 group">
-  <span>Sign Up</span>
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 17 9"
-    className="h-[9px] w-[17px] text-white transition-colors group-hover:text-black"
-  >
-    <path
-      fill="currentColor"
-      fillRule="evenodd"
-      d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z"
-      clipRule="evenodd"
-    />
-  </svg>
-</button>
-
-
+        {/* CTA Button */}
+        <div 
+          id="join-us"
+          className="mt-12 md:mt-16"
+        >
+          <Link href="https://forms.example.com/game9-feedback" target="_blank" rel="noopener noreferrer">
+            <GradientButton className="h-14 px-8 text-lg font-bold">
+              Join Beta Access 
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 17 9"
+                className="h-[9px] w-[17px] ml-2"
+              >
+                <path
+                  fill="currentColor"
+                  fillRule="evenodd"
+                  d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </GradientButton>
+          </Link>
+        </div>
       </div>
     </div>
   );

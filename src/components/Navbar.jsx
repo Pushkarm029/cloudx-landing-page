@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import "@fontsource/inter"; 
+import GradientButton from './ui/GradientButton';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -27,10 +28,13 @@ const Navbar = () => {
       <div className="hidden lg:flex w-auto items-center justify-center">
         <NavigationMenu.Root>
           <NavigationMenu.List className="flex space-x-7 text-sm text-white/80">
-            {["Documentation", "Resources", "Request Preview", "Careers", "Pricing"].map((item, index) => (
+            {[
+              { name: "What We Offer", href: "#what-we-offer" },
+              { name: "Testimonials", href: "#testimonials" },
+            ].map((item, index) => (
               <NavigationMenu.Item key={index}>
-                <NavigationMenu.Link href="#" className="hover:text-white hover:brightness-200 transition-colors">
-                  {item}
+                <NavigationMenu.Link href={item.href} className="hover:text-white hover:brightness-200 transition-colors">
+                  {item.name}
                 </NavigationMenu.Link>
               </NavigationMenu.Item>
             ))}
@@ -40,12 +44,11 @@ const Navbar = () => {
 
       {/* Right: Buttons */}
       <div className="hidden lg:flex gap-3">
-        <button className="border font-bold border-white/30 hover:border-white/10 text-white text-sm rounded-lg px-3 py-1.5 bg-transparent hover:bg-white/10 transition">
-          Get a demo
-        </button>
-        <button className="border text-sm border-white bg-white text-black rounded-lg px-3 py-1.5 hover:bg-white/90 transition">
-          Sign up
-        </button>
+        <a href="#join-us">
+          <GradientButton className="px-4 py-1.5 text-sm font-medium">
+            Join Beta
+          </GradientButton>
+        </a>
       </div>
 
       {/* Mobile: Hamburger Menu Button */}
@@ -57,25 +60,25 @@ const Navbar = () => {
       {menuOpen && (
         <div className="absolute top-[4rem] left-0 w-full bg-black/80 backdrop-blur-lg rounded-lg shadow-lg py-4 px-6 lg:hidden">
           <ul className="flex flex-col space-y-4 text-white text-center">
-            {["Documentation", "Resources", "Request Preview", "Careers", "Pricing"].map((item, index) => (
+            {[
+              { name: "What We Offer", href: "#what-we-offer" },
+              { name: "Testimonials", href: "#testimonials" },
+            ].map((item, index) => (
               <li key={index}>
-                <a href="#" className="block py-2 hover:text-blue-400 transition">
-                  {item}
+                <a href={item.href} className="block py-2 hover:text-blue-400 transition" onClick={() => setMenuOpen(false)}>
+                  {item.name}
                 </a>
               </li>
             ))}
             <li>
-              <button className="w-full border font-bold border-white/10 hover:border-white/10 text-white text-sm rounded-lg px-3 py-1.5 hover:bg-white/10 transition">
-                Get a demo
-              </button>
-            </li>
-            <li>
-              <button 
-                className="border text-sm border-white text-black rounded-lg px-3 py-1.5 
-                hover:bg-white hover:text-black transition-all duration-200"
-              >
-                Sign up
-              </button>
+              <a href="#join-us">
+                <GradientButton 
+                  className="w-full px-3 py-1.5 text-sm font-medium"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Join Beta
+                </GradientButton>
+              </a>
             </li>
           </ul>
         </div>
