@@ -21,7 +21,7 @@ const Navbar = () => {
     >
       {/* Left: Logo */}
       <div className="flex items-center">
-        <Image src="/logo.png" alt="Logo" width={150} height={50} className="h-10 w-auto" />
+        <Image src="/logo.png" alt="Game9 Logo" width={150} height={50} className="h-10 w-auto" />
       </div>
 
       {/* Middle: Desktop Navigation */}

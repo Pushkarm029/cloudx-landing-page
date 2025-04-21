@@ -99,7 +99,7 @@ export default function HeroFooterSection() {
             {/* Logo & Name */}
             <div className="flex items-center space-x-2">
               <Image src="/logo.png" alt="Game9 Logo" width={24} height={24} />
-              <h2 className="text-lg text-white font-bold">Game9</h2>
+              <span className="text-lg text-white font-bold">Game9</span>
             </div>
             {/* Description */}
             <p className="text-white/60 text-sm max-w-xs">
