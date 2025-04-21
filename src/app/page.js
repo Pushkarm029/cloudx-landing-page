@@ -6,7 +6,6 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 // import Faq from "@/components/Faq";
 import Testimonial from "@/components/Testimonial";
-import Vision from "@/components/Vision";
 
 export default function Home() {
   return (

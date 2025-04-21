@@ -38,8 +38,8 @@ export default function Vision() {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Our Vision</h2>
           <p className="text-white/70 max-w-2xl mx-auto">
-            Game9 is more than just a gaming platform. It's a journey we're taking together.
-            Here's where we're headed.
+            Game9 is more than just a gaming platform. It&apos;s a journey we&apos;re taking together.
+            Here&apos;s where we&apos;re headed.
           </p>
         </div>
         
@@ -105,7 +105,7 @@ export default function Vision() {
             Want to be part of our journey from the beginning?
           </p>
           <a 
-            href="https://forms.example.com/game9-feedback" 
+            href="https://form.typeform.com/to/H2ifLY5y" 
             target="_blank" 
             rel="noopener noreferrer"
             className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white rounded-full transition-all duration-300"

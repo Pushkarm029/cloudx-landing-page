@@ -46,7 +46,7 @@ export default function Testimonial() {
             className="text-white/70 max-w-2xl mx-auto"
           >
             Early access players are already experiencing the Game9 difference.
-            Here's what they have to say about our platform.
+            Here&apos;s what they have to say about our platform.
           </p>
         </div>
         
@@ -72,7 +72,7 @@ export default function Testimonial() {
                 </div>
               </div>
               <p className="text-white/80 italic">
-                "{testimonial.text}"
+                &quot;{testimonial.text}&quot;
               </p>
               <div className="mt-4 flex">
                 {[1, 2, 3, 4, 5].map((star) => (
@@ -94,7 +94,7 @@ export default function Testimonial() {
           className="mt-16 text-center"
         >
           <a 
-            href="https://forms.example.com/game9-feedback" 
+            href="https://form.typeform.com/to/H2ifLY5y" 
             target="_blank" 
             rel="noopener noreferrer"
           >

@@ -6,11 +6,11 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function HeroSectionWithNavbar() {
-  const [isMounted, setIsMounted] = useState(false);
+  // const [isMounted, setIsMounted] = useState(false);
 
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
+  // useEffect(() => {
+  //   setIsMounted(true);
+  // }, []);
 
   const benefits = [
     {
@@ -52,7 +52,7 @@ export default function HeroSectionWithNavbar() {
         <p 
           className="text-white/70 mt-4 text-base md:text-xl max-w-2xl leading-relaxed"
         >
-          This isn't just another cloud gaming platform charging hefty fees while making you wait. 
+          This isn&apos;t just another cloud gaming platform charging hefty fees while making you wait. 
           Game9 is built by gamers who believe in instant access, zero compromises, and putting players first.
         </p>
 
@@ -79,7 +79,7 @@ export default function HeroSectionWithNavbar() {
           id="join-us"
           className="mt-12 md:mt-16"
         >
-          <Link href="https://forms.example.com/game9-feedback" target="_blank" rel="noopener noreferrer">
+          <Link href="https://form.typeform.com/to/H2ifLY5y" target="_blank" rel="noopener noreferrer">
             <GradientButton className="h-14 px-8 text-lg font-bold">
               Join Beta Access 
               <svg
